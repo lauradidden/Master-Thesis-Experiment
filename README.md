@@ -43,5 +43,12 @@ python setup.py sdist bdist_wheel
 pip install .
 ```
 
+### Download this repository
+Download or clone this repository to your local machine:
+```bash
+git clone https://github.com/lauradidden/Master-Thesis-Experiment.git
+cd Master-Thesis-Experiment
+```
+
 ## Support
 For any questions or installation issues, please contact Laura Didden (l.l.c.didden@student.tue.nl).
