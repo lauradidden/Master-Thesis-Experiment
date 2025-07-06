@@ -23,7 +23,7 @@ conda activate logview_env
 To run the tutorial and experiment notebooks, install the following packages:
 
 ```bash
-pip install ipykernel pandas pm4py
+pip install ipykernel pandas pm4py os zipfile
 ```
 
 
