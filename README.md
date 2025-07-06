@@ -6,10 +6,10 @@ The purpose of this research project is to evaluate the usefulness, usability, a
 1. **Install Prerequisites**   
    Install LogView and the required packages (explanation below).
 3. **Tutorial (at home)**  
-   The study begins by executing the tutorial file [`Tutorial.ipynb`](./Tutorial.ipynb), which introduces the tools used in the experiment. This ensures you are familiar with the tools before taking part in the actual experiment.
+   The first part of the study is a tutorial [`Tutorial.ipynb`](./Tutorial.ipynb), which introduces the tools used in the experiment. This ensures you are familiar with the tools before taking part in the actual experiment.
 
 4. **Experiment (in the presence of the researcher)**  
-   Once the tutorial is complete, you perform the actual experiment using [`Experiment.ipynb`](./Experiment.ipynb), either in person or online, under the supervision of the researcher.
+   The second part is the experiment [`Experiment.ipynb`](./Experiment.ipynb). This will take place once the tutorial is complete, either in person or online, under the supervision of the researcher.
 
 ## Prerequisites
 
