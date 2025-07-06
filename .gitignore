@@ -1,1 +1,3 @@
 BPI_Challenge_2017.csv
+__pycache__/
+*.pyc
