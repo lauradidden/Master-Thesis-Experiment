@@ -511,6 +511,10 @@ def pie(result_set_name, log_view, metric="avg_case_duration_seconds", details=T
     # Evaluate last query
     filtered, _ = log_view.query_evaluator.evaluate(full_log, query_obj)
 
+    if filtered.empty:
+        print("No cases passed the final filter, pie chart cannot be build.")
+        return
+
     # Get query expressions
     query_expr_map = {
         ev["query"].name: ev["query"].as_string()
@@ -546,6 +550,7 @@ def pie(result_set_name, log_view, metric="avg_case_duration_seconds", details=T
         f"{query_expr_map.get(row['query'], row['query'])} ✅"
         for _, row in lineage_df.iterrows()
     ])
+
 
     # Aggregate
     grouped = (
