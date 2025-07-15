@@ -181,7 +181,7 @@ def split_subsets(subsets, query_obj, filter_label, step_index, query_evaluator,
         subset_df = subset["df"]
         subset_name = subset["name"]
         path = subset["label_path"]
-        order_path = subset.get("order_path", [])  # track ordering
+        order_path = subset.get("order_path", []) 
 
         cache_key = (subset_name, query_obj.name)
         if cache_key in filter_cache:
@@ -320,7 +320,7 @@ def recursively_apply_filters(selected_sequence_df, log_view, metric):
 
     return result_df, main_path_leaf["label_path"] if main_path_leaf else []
 
-def icicle(result_set_name, log_view, metric="avg_case_duration_seconds", show_time=False, details=True):
+def query_exploration_icicle(result_set_name, log_view, metric="avg_case_duration_seconds", show_time=False, details=True):
 
     def format_seconds(seconds):
         if pd.isna(seconds):
@@ -417,7 +417,7 @@ def icicle(result_set_name, log_view, metric="avg_case_duration_seconds", show_t
         final_result_path = " → ".join(main_path) if main_path else ""
 
         for _, row in icicle_df.iterrows():
-            # Extract path parts and strip any 🟡 prefix from them
+            # Extract path parts
             path_parts = [
                 str(row[col]).replace("🟡 ", "") for col in path_cols if pd.notna(row[col])
             ]
@@ -426,7 +426,6 @@ def icicle(result_set_name, log_view, metric="avg_case_duration_seconds", show_t
             # Check if this row is the final result
             is_final_result = current_path == final_result_path
 
-            # Replace ✔ and ✘ with ✅ and ❌
             path_with_emojis = current_path.replace("✔", "✅").replace("✘", "❌").replace("✓", "✅").replace("✗", "❌")
 
             # Format the metric
@@ -470,7 +469,7 @@ def get_sibling_subsets(result_set_name, log_view):
 
     return parent_log, query_obj, label, step_index, lineage_df
 
-def pie(result_set_name, log_view, metric="avg_case_duration_seconds", details=True):
+def query_breakdown_pie(result_set_name, log_view, metric="avg_case_duration_seconds", details=True):
     from plotly.colors import sample_colorscale
     import plotly.graph_objects as go
 
